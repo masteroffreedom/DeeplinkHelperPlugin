@@ -10,4 +10,4 @@ https://github.com/masteroffreedom/DeeplinkHelperPlugin/blob/master/src/main/res
 https://plugins.jetbrains.com/plugin/15369-deeplink-helper
 )
 
-![image](https://plugins.jetbrains.com/files/15369/screenshot_23646.png)
+![image](https://plugins.jetbrains.com/files/15369/screenshot_23646.png =300x)
