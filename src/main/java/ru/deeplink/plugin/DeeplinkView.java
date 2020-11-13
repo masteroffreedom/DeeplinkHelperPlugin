@@ -89,7 +89,7 @@ public class DeeplinkView {
 
         configLink.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
-                openWebPage(URI.create("https://ya.ru"));
+                openWebPage(URI.create("https://github.com/masteroffreedom/DeeplinkHelperPlugin/blob/master/src/main/resources/json/config.json"));
             }
         });
     }
