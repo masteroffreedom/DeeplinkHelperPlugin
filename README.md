@@ -9,3 +9,5 @@ https://github.com/masteroffreedom/DeeplinkHelperPlugin/blob/master/src/main/res
 [Download](
 https://plugins.jetbrains.com/plugin/15369-deeplink-helper
 )
+
+https://plugins.jetbrains.com/files/15369/screenshot_23646.png
