@@ -1,0 +1,38 @@
+
+<idea-plugin>
+    <id>ru.deeplink.plugin</id>
+    <name>Deeplink Helper</name>
+    <vendor>masteroffreedom</vendor>
+    <description>
+        Helpful plugin for send deeplink or adb commadns to your application/device. Create your own configuration in json config file.
+        Share script of useful commands with other developers or QA for boilerplate and elusive cases.
+    </description>
+    <version>1.3</version>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.android</depends>
+    <!--
+    please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+            on how to target different products
+   -->
+    <!--
+    uncomment to enable plugin in all products
+       <depends>com.intellij.modules.lang</depends>
+
+   -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="ru.deeplink.plugin.PluginConfigStoreService"/>
+        <toolWindow id="Deeplink Plugin" anchor="right" factoryClass="ru.deeplink.plugin.MyToolWindowFactory"/>
+    </extensions>
+    <!--
+    please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description
+   -->
+    <idea-version since-build="182"/>
+    <actions>
+        <!--  Add your actions here  -->
+    </actions>
+</idea-plugin>
+
+
+
+

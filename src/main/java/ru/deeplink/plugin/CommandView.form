@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="ru.deeplink.plugin.CommandView">
+  <grid id="27dc6" binding="rootPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="f1a5e" class="javax.swing.JLabel" binding="label">
+        <constraints border-constraint="Center"/>
+        <properties>
+          <text value="Label"/>
+        </properties>
+      </component>
+      <component id="ac509" class="javax.swing.JLabel" binding="delete">
+        <constraints border-constraint="East"/>
+        <properties>
+          <enabled value="true"/>
+          <focusable value="true"/>
+          <horizontalAlignment value="0"/>
+          <maximumSize width="32" height="18"/>
+          <minimumSize width="32" height="18"/>
+          <opaque value="false"/>
+          <preferredSize width="32" height="18"/>
+          <text value=" - "/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

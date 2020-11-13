@@ -1,0 +1,30 @@
+{
+  "applicationId": "com.example.you.app",
+
+  "deeplinks": [
+    {
+      "deeplink": "myapp://open_profile/",
+      "hasArgument": true,
+      "argumentName": "profile id",
+      "name": "Open profile by id"
+    }
+  ],
+
+  "commands" : [
+    {
+      "command": "am start -n \"com.example.you.app/com.example.you.app.MainActivity\" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER",
+      "name": "App open"
+    },
+    {
+      "command": "pm clear com.example.you.app",
+      "name": "App clear data"
+    },
+    {
+      "command": "adb reverse tcp:8888 tcp:8888"
+    },
+    {
+      "command": "sleep 5",
+      "name": "delay"
+    }
+  ]
+}

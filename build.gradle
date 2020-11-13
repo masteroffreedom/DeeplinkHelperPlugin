@@ -1,0 +1,83 @@
+buildscript {
+
+    ext.kotlin_version = '1.1.3'
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "net.ltgt.gradle:gradle-apt-plugin:0.9"
+    }
+}
+
+plugins {
+    id "org.jetbrains.intellij" version "0.4.2"
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+apply plugin: 'kotlin-kapt'
+
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+sourceSets {
+    main {
+    }
+}
+
+if (!hasProperty('StudioCompilePath')) {
+    throw new GradleException("No StudioCompilePath value was set, please create gradle.properties file")
+}
+
+intellij {
+    pluginName 'beru_deeplink_plugin'
+    updateSinceUntilBuild false
+
+    intellij.localPath = project.hasProperty("StudioRunPath") ? StudioRunPath : StudioCompilePath
+}
+
+group 'ru.beru.intellij.plugin.adbidea'
+
+dependencies {
+    compile 'com.google.code.gson:gson:2.8.6'
+    compile "org.jetbrains.kotlin:kotlin-stdlib:${kotlin_version}"
+    compile "org.jetbrains.kotlin:kotlin-runtime:${kotlin_version}"
+    compile "com.intellij:forms_rt:7.0.3"
+    compileOnly fileTree(dir: "$StudioCompilePath/plugins/android/lib", include: ['*.jar'])
+    compileOnly fileTree(dir: "$StudioCompilePath/lib", include: ['*.jar'])
+    compile 'com.google.dagger:dagger:2.6'
+    kapt "com.google.dagger:dagger-compiler:2.6"
+
+    compile group: 'commons-io', name: 'commons-io', version: '2.5'
+
+    testCompile 'junit:junit:4.12'
+    testCompile fileTree(dir: "$StudioCompilePath/plugins/android/lib", include: ['*.jar'])
+    testCompile fileTree(dir: "$StudioCompilePath/lib", include: ['*.jar'])
+    testCompile "org.mockito:mockito-core:1.+"
+    testCompile "com.google.truth:truth:0.30"
+
+
+}
+
+task(verifySetup) {
+    doLast {
+        def ideaJar = "$StudioCompilePath/lib/idea.jar"
+        if (!file(ideaJar).exists()) {
+            throw new GradleException("$ideaJar not found, set StudioCompilePath in gradle.properties")
+        }
+    }
+}
+
+
+compileJava.dependsOn verifySetup
