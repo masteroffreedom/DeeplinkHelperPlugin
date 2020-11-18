@@ -20,7 +20,14 @@
       "name": "App clear data"
     },
     {
-      "command": "adb reverse tcp:8888 tcp:8888"
+      "command": "reverse tcp:8888 tcp:8888",
+      "name": "adb reverse 8888"
+    },{
+      "command": "su 0 svc wifi enable",
+      "name": "WiFi on"
+    },{
+      "command": "su 0 svc wifi disable",
+      "name": "WiFi off"
     },
     {
       "command": "sleep 5",
