@@ -7,7 +7,7 @@
         Helpful plugin for send deeplink or adb commadns to your application/device. Create your own configuration in json config file.
         Share script of useful commands with other developers or QA for boilerplate and elusive cases.
     </description>
-    <version>1.4</version>
+    <version>1.5</version>
     <depends>com.intellij.modules.platform</depends>
     <depends>org.jetbrains.android</depends>
     <!--
@@ -22,7 +22,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationService serviceImplementation="ru.deeplink.plugin.PluginConfigStoreService"/>
-        <toolWindow id="Deeplink Plugin" anchor="right" factoryClass="ru.deeplink.plugin.MyToolWindowFactory"/>
+        <toolWindow id="Deeplink Helper" anchor="right" factoryClass="ru.deeplink.plugin.MyToolWindowFactory"/>
     </extensions>
     <!--
     please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description
